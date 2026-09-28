@@ -1,0 +1,179 @@
+:root {
+  /* Color Palette */
+  --bg-dark: #0b090d;
+  --bg-deep-plum: #150a17;
+  --bg-burgundy: #220d20;
+  --bg-burgundy-glow: rgba(77, 18, 53, 0.32);
+  --card-bg: rgba(22, 10, 20, 0.78);
+  --card-border: rgba(212, 139, 159, 0.16);
+  --card-border-hover: rgba(212, 139, 159, 0.3);
+
+  /* Accents */
+  --accent-rose: #d48b9f;
+  --accent-rose-soft: #c0778c;
+  --accent-dusty-pink: #dfa8b6;
+  --accent-gold: #dfb89e;
+  --accent-gold-soft: rgba(223, 184, 158, 0.18);
+
+  /* Envelope Colors */
+  --envelope-body: #240a1d;
+  --envelope-body-dark: #190614;
+  --envelope-border: rgba(212, 139, 159, 0.22);
+  --envelope-seal: #a84b65;
+  --envelope-seal-hover: #b85471;
+  --envelope-paper: #f7f1e6;
+
+  /* Typography Colors */
+  --text-cream: #faf5ed;
+  --text-ivory: #ede4d7;
+  --text-muted: #9e8e97;
+  --text-subtle: #73646d;
+
+  /* Font Families */
+  --font-serif: 'Cormorant Garamond', 'Noto Serif Malayalam', 'Gayathri', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-malayalam: 'Noto Serif Malayalam', 'Manjari', 'Gayathri', 'Kartika', sans-serif;
+
+  /* Elevation & Shadows */
+  --shadow-subtle: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+  --shadow-envelope: 0 24px 50px -12px rgba(0, 0, 0, 0.75), 0 0 40px rgba(77, 18, 53, 0.2);
+  --shadow-letter: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 50px rgba(77, 18, 53, 0.18);
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--bg-dark);
+  color: var(--text-ivory);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--bg-dark);
+}
+
+/* Atmospheric Ambient Background */
+.ambient-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-glow-1 {
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(92, 22, 61, 0.28) 0%, rgba(35, 13, 32, 0.12) 50%, transparent 75%);
+  filter: blur(60px);
+  opacity: 0.85;
+}
+
+.ambient-glow-2 {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(70, 16, 48, 0.2) 0%, rgba(20, 8, 22, 0.08) 55%, transparent 75%);
+  filter: blur(70px);
+  opacity: 0.7;
+}
+
+.subtle-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 40%, rgba(5, 4, 7, 0.75) 100%);
+}
+
+/* Typography Utility Classes */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-malayalam {
+  font-family: var(--font-malayalam);
+}
+
+.color-rose {
+  color: var(--accent-rose);
+}
+
+.color-cream {
+  color: var(--text-cream);
+}
+
+.color-muted {
+  color: var(--text-muted);
+}
+
+/* Button & Interactive Resets */
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Scrollbar refinement */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 139, 159, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 139, 159, 0.35);
+}
+
+/* Focus styles for keyboard accessibility */
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent-rose);
+  outline-offset: 4px;
+}
+
+/* Graphite studio responsiveness */
+@media (max-width: 480px) {
+  .tool-label-text {
+    display: none;
+  }
+}
+
